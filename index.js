@@ -7,9 +7,6 @@ var myReduce = require('./myReduce');
   To run it on the console do: `node index.js`
 ***********************************************************************/
 
-var numArray = [0,1,10,100,1000];
-
-
 /* myEach */
 
 //
@@ -17,6 +14,26 @@ var numArray = [0,1,10,100,1000];
    console.log('inside myEach', element, index, arr);
  });*/
 
+var numberArray = [1,2,3];
+var stringArray = ["hi", "bye", "hello", "hey", "hola"];
+var nothingInArray = [];
+var undefinedArray = [undefined, undefined, undefined, undefined];
+var booleanArray = [false, true, false];
+function sum(current, previous) {
+	return current + previous;
+}
+function concat(current, previous) {
+	return current + " " + previous;
+}
+function opposite(boolean) {
+	return !boolean;
+}
+myReduce(numberArray, sum, 0);
+myReduce(stringArray, concat, 2);
+myReduce(booleanArray, opposite);
+myReduce(booleanArray, concat, 1);
+myReduce(nothingInArray, sum, 1);
+myReduce(undefinedArray, concat);
 
 
 
